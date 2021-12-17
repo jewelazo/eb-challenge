@@ -1,15 +1,19 @@
+
+
 <div class="properties-container">
 <% @properties.each do |property| %>
-    <div class="property-card">
-        <span> <b>Public Id:</b> <%= property[:public_id] %></span>
-        <span> <b>Title:</b> <%= property[:title] %></span>
-        <span> <b>Property Type:</b> <%= property[:property_type] %></span>
-        <span> <b>Location:</b> <%= property[:location] %></span>
-        <% if  property[:title_image_thumb] %>
-            <%= image_tag property[:title_image_thumb] %>
-        <% else %>
-            <img src="/images/not-found.png" alt="anonymus">
-        <% end %>
-    </div>
+    <%= link_to "/properties/#{property[:public_id]}" do %>
+        <div class="property-card">
+            <span> <b>Public Id:</b> <%= property[:public_id] %></span>
+            <span> <b>Title:</b> <%= property[:title] %></span>
+            <span> <b>Property Type:</b> <%= property[:property_type] %></span>
+            <span> <b>Location:</b> <%= property[:location] %></span>
+            <% if  property[:title_image_thumb] %>
+                <%= image_tag property[:title_image_thumb] %>
+            <% else %>
+                <img src="/images/not-found.png" alt="anonymus">
+            <% end %>
+        </div>
+    <% end %>
 <% end %>
 </div>

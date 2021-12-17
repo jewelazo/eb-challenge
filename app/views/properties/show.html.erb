@@ -1,0 +1,15 @@
+<div class="show-property">
+<span><b>Public Id:</b><%= @property[:public_id]%></span>
+<span><b>Title:</b> <%= @property[:title]%></span>
+<span><b>Description:</b><%= @property[:description]%></span>
+<span><b>Property Type:</b><%= @property[:property_type]%></span>
+<b>Location:</b>
+<span><b>Name: </b><%= @property[:location][:name]%></span>
+<span><b>Latitude: </b><%= @property[:location][:latitude]%></span>
+<span><b>Longitude: </b><%= @property[:location][:longitude]%></span>
+<% if  @property[:property_images].any? %>
+    <%= image_tag @property[:property_images][0][:url] %>
+<% else %>
+    <img src="/images/not-found.png" alt="anonymus">
+<% end %>
+</div>

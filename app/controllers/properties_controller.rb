@@ -5,4 +5,10 @@ class PropertiesController < ApplicationController
                     headers: { "X-Authorization" => "l7u502p8v46ba3ppgvj5y2aad50lb9"})
         @properties=JSON.parse(response.body,symbolize_names: true)[:content]
     end
+
+    def show
+        response=HTTParty.get("https://api.stagingeb.com/v1/properties/#{params[:id]}",
+            headers: { "X-Authorization" => "l7u502p8v46ba3ppgvj5y2aad50lb9"})
+        @property=JSON.parse(response.body,symbolize_names: true)
+    end
 end

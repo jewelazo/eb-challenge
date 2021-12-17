@@ -4,7 +4,11 @@ body{
 }
 
 
-
+a{
+    text-decoration: none;
+    color: inherit;
+    outline: 0;
+}
 .properties-container{
     display: grid;
     grid-template-columns: repeat(3,1fr);
@@ -22,4 +26,15 @@ body{
     width: 200px;
     height: 150px;
     margin: 0 auto;
+}
+
+.show-property{
+    display: grid;
+    gap:10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.show-property img{
+    margin:0 auto;
 }
