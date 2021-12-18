@@ -3,6 +3,7 @@
   <head>
     <title>App</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="UTF-8">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,6 +12,17 @@
   </head>
 
   <body>
+    <% flash.each do |type, msg| %>
+      <% if type=="notice"%>
+        <div class="notice-flash">
+          <p> &#128512 <%= msg %></p>
+        </div>
+      <% elsif type== "alert"%>
+        <div class="alert-flash">
+          <p> &#128560 <%= msg %></p>
+        </div>
+      <% end %>
+    <% end %>
     <%= yield %>
   </body>
 </html>

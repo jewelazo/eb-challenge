@@ -1,15 +1,41 @@
 <div class="show-property">
-<span><b>Public Id:</b><%= @property[:public_id]%></span>
-<span><b>Title:</b> <%= @property[:title]%></span>
-<span><b>Description:</b><%= @property[:description]%></span>
-<span><b>Property Type:</b><%= @property[:property_type]%></span>
-<b>Location:</b>
-<span><b>Name: </b><%= @property[:location][:name]%></span>
-<span><b>Latitude: </b><%= @property[:location][:latitude]%></span>
-<span><b>Longitude: </b><%= @property[:location][:longitude]%></span>
-<% if  @property[:property_images].any? %>
-    <%= image_tag @property[:property_images][0][:url] %>
-<% else %>
-    <img src="/images/not-found.png" alt="anonymus">
-<% end %>
+    <span><b>Public Id:</b><%= @property[:public_id]%></span>
+    <span><b>Title:</b> <%= @property[:title]%></span>
+    <span><b>Description:</b><%= @property[:description]%></span>
+    <span><b>Property Type:</b><%= @property[:property_type]%></span>
+    <b>Location:</b>
+    <span><b>Name: </b><%= @property[:location][:name]%></span>
+    <span><b>Latitude: </b><%= @property[:location][:latitude]%></span>
+    <span><b>Longitude: </b><%= @property[:location][:longitude]%></span>
+    <% if  @property[:property_images].any? %>
+        <%= image_tag @property[:property_images][0][:url] %>
+    <% else %>
+        <img src="/images/not-found.png" alt="anonymus">
+    <% end %>
+</div>
+
+<div class="form-contact">
+    <div><b>Contact this property</b></div>
+    
+    <%= form_with url: "/properties/#{@property[:public_id]}/new_contact", method: :post, model: @new_contact do |form| %>
+        <div>
+            <%= form.label :name %><br />
+            <%= form.text_field :name %>
+        </div>
+        <div>
+            <%= form.label :phone %><br />
+            <%= form.text_field :phone %>
+        </div>
+        <div>
+            <%= form.label :email %><br />
+            <%= form.text_field :email %>
+        </div>
+        <div>
+            <%= form.label :message %><br />
+            <%= form.text_field :message %>
+        </div>
+        <div class="contact-submit">
+        <%= form.submit %>
+        </div>
+    <% end %>
 </div>
