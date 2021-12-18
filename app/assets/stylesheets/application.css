@@ -58,11 +58,12 @@ a{
 }
 .contact-submit{
     margin-top: 20px;
+   
 }
 .contact-submit input{
     display: block;
     margin: 0 auto;
-
+    cursor: pointer;
 }
 .form-contact>div{
     text-align: center;
