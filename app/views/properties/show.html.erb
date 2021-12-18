@@ -7,11 +7,15 @@
     <span><b>Name: </b><%= @property[:location][:name]%></span>
     <span><b>Latitude: </b><%= @property[:location][:latitude]%></span>
     <span><b>Longitude: </b><%= @property[:location][:longitude]%></span>
-    <% if  @property[:property_images].any? %>
-        <%= image_tag @property[:property_images][0][:url] %>
-    <% else %>
-        <img src="/images/not-found.png" alt="anonymus">
-    <% end %>
+    <div class="image-show">
+        <% if  @property[:property_images].any? %>
+            <% @property[:property_images].each do |image| %>
+                <div><%= image_tag image[:url] %></div>
+            <% end %>
+        <% else %>
+            <img src="/images/not-found.png" alt="anonymus">
+        <% end %>
+    </div>
 </div>
 
 <div class="form-contact">

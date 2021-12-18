@@ -84,3 +84,13 @@ a{
     color: red;
     font-size: 18px;
 }
+
+.image-show{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap:40px
+}
+.image-show img{
+    height: 250px;
+    width: 300px;
+}

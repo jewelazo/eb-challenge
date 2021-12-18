@@ -30,11 +30,8 @@ class PropertiesController < ApplicationController
             flash.notice = "Message sent correctly"
             redirect_to root_path
         else
-            response=HTTParty.get("#{BASE_URL}/properties/#{params[:property_id]}",
-                headers: { "X-Authorization" => "l7u502p8v46ba3ppgvj5y2aad50lb9"})
-            @property=JSON.parse(response.body,symbolize_names: true)
             flash.alert = "You must specify a contact source"
-            redirect_to "/properties/#{@property[:public_id]}/new_contact"
+            redirect_to "/properties/#{params[:property_id]}/new_contact"
         end
     end
 
