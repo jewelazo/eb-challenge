@@ -47,7 +47,7 @@ http://localhost:3000
 ## Notes
 - The hardest thing to make this app was learning how use an api in Rails,before that I only used api in frontend to make websites.
 - If I had more time, I would refactor my code, for example the action create_contact of properties controller,I would improve my tests for each action,CSS styles and I would implement pagination to home page.
-- I'm happy with the result, because I learned a lot making this app.
+- I'm happy with the result, because I learned a lot making this app,actually later I'm going to make the v2.
 
 
 ## Maintainers
