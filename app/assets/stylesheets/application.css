@@ -25,6 +25,8 @@ a{
     align-items: center;
     justify-content: center;
     padding: 10px;
+    width: 420px;
+    height: 320px;
 }
 
 .property-card img{
