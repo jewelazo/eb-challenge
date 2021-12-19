@@ -1,7 +1,7 @@
-# EBAPP
+# EB-APP
 Challenge EB
 ## Demo-online
-**[DEMO](https://tweetableapp.herokuapp.com/)**
+**[DEMO](https://myappeb.herokuapp.com/)**
 
 ## Description
 Website connected to EB account to list all published properties and where users can contact with each property.
