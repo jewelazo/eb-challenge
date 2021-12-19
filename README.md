@@ -42,7 +42,13 @@ http://localhost:3000
 ```
 
 11. If you got any problems booting the server or creating the db you can repeat from number 3 or verify the environment variables. That's it. Thanks for enjoying this app.
-## Maintainers
- **[Giancarlo](https://github.com/jewelazo)**
+
  
 ## Notes
+- The hardest thing to make this app was learning how use an api in Rails,before that I only used api in frontend to make websites.
+- If I had more time, I would refactor my code, for example the action create_contact of properties controller,I would improve my tests for each action,CSS styles and I would implement pagination to home page.
+- I'm happy with the result, because I learned a lot making this app.
+
+
+## Maintainers
+ **[Giancarlo](https://github.com/jewelazo)**
