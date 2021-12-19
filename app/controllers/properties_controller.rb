@@ -1,16 +1,13 @@
 class PropertiesController < ApplicationController
     include HTTParty
-    BASE_URL="https://api.stagingeb.com/v1"
-    PARTIAL_URL_INITIAL_PAGE="/properties?page=1&limit=15&search%5Bstatuses%5D%5B%5D=published"
+    
     def index
-        response=HTTParty.get("#{BASE_URL}#{PARTIAL_URL_INITIAL_PAGE}",
-                    headers: { "X-Authorization" => "l7u502p8v46ba3ppgvj5y2aad50lb9"})
+        response=HTTParty.get("#{BASE_URL}#{PARTIAL_URL_INITIAL_PAGE}",headers: API_KEY)
         @properties=JSON.parse(response.body,symbolize_names: true)[:content]
     end
 
     def show
-        response=HTTParty.get("#{BASE_URL}/properties/#{params[:id]}",
-            headers: { "X-Authorization" => "l7u502p8v46ba3ppgvj5y2aad50lb9"})
+        response=HTTParty.get("#{BASE_URL}/properties/#{params[:id]}",headers: API_KEY)
         @property=JSON.parse(response.body,symbolize_names: true)
         @new_contact=Contact.new
     end
@@ -21,8 +18,9 @@ class PropertiesController < ApplicationController
         contact=@new_contact.attributes.slice("name","phone",'email','property_id','message')
         contact["source"]="giandomain.com"
         options = {
-            headers: { "Content-Type"=> "application/json" ,
-            "X-Authorization" => "l7u502p8v46ba3ppgvj5y2aad50lb9"
+            headers: {
+                'Content-Type'=>'application/json',
+                'X-Authorization'=> API_KEY["X-Authorization"]
             },
             body: contact.to_json
         }
